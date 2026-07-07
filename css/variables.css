@@ -1,0 +1,26 @@
+:root {
+  /* Cores Base - Tema Claro (Padrão) */
+  --bg-color: #F7F5F0;
+  --text-color: #1A1A1A;
+  --accent-color: #D35400; /* Terracota elegante, foge do azul corporativo */
+  --glass-bg: rgba(247, 245, 240, 0.7);
+  --glass-border: rgba(26, 26, 26, 0.1);
+  --timeline-line: #E0DDD5;
+  
+  /* Tipografia */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  /* Easings para Microinterações */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #0F0F11;
+  --text-color: #EAEAEA;
+  --accent-color: #E67E22;
+  --glass-bg: rgba(15, 15, 17, 0.7);
+  --glass-border: rgba(234, 234, 234, 0.1);
+  --timeline-line: #2A2A2A;
+}

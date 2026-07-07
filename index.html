@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMYN — Estúdio de Experiências Digitais</title>
+  <meta name="description" content="LUMYN transforma ideias em experiências digitais memoráveis.">
+
+  <!-- Fontes: Fraunces (display, com personalidade) + Inter (corpo/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!-- ============================================================
+     CURSOR CUSTOMIZADO (ponto + anel controlados via JS)
+     ============================================================ -->
+  <div id="cursor-trail"></div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ============================================================
+     HEADER
+     ============================================================ -->
+  <header>
+    <div class="container">
+      <a href="#top" class="logo hoverable">ANA<span>B</span>EATRIZ</a>
+
+      <nav class="main-nav">
+        <a href="#jornada" class="hoverable">Jornada</a>
+        <a href="#trabalhos" class="hoverable">Galeria</a>
+        <a href="#contato" class="hoverable">Contato</a>
+
+        <!-- Botão "janela" de tema -->
+        <button class="theme-toggle hoverable" id="themeToggle" aria-label="Alternar tema claro/escuro">
+          <span class="tt-sun"></span>
+          <span class="tt-moon"></span>
+          <span class="tt-cloud c1"></span>
+          <span class="tt-cloud c2"></span>
+          <span class="tt-star s1"></span>
+          <span class="tt-star s2"></span>
+          <span class="tt-star s3"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+     HERO
+     ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero-bg" id="heroParallax">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title" id="heroTitle">
+          <span class="word"><span>olá,</span></span>
+          <span class="word"><span>sou</span></span>
+          <span class="word"><span>a</span></span>
+          <span class="word"><span><em>Ana</em></span></span>
+          <span class="word"><span><em>Beatriz</em></span></span>
+        </h1>
+        <p class="hero-subtitle">
+          Sou a Ana Beatriz, gosto bastante de tecnologia e design. me inscrevi no entra21 por 5 anos seguindos, e finalmente minha hora chegou!.
+        </p>
+      </div>
+      <div class="hero-image-container">
+        <img src="img/eu.png" alt="Foto de Ana Beatriz" id="hero-ana-img" class="hoverable">
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- ============================================================
+     JORNADA — SCROLL PINNING + HORIZONTAL
+     ============================================================ -->
+  <section class="journey" id="journeyWrap">
+    <div class="journey-sticky">
+
+      <div class="journey-heading">
+        <span class="eyebrow">O começo de tudo...</span>
+        <h2 id="jornada">A jornada</h2>
+      </div>
+
+      <div class="journey-track" id="journeyTrack">
+
+        <article class="journey-card">
+          <div class="journey-num">01 — Descobrir</div>
+          <h3>Imersão no problema</h3>
+          <p>Entendemos o negócio, o público e o contexto antes de desenhar
+            qualquer tela. Nenhuma decisão visual nasce sem uma pergunta
+            respondida antes.</p>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-num">02 — Definir</div>
+          <h3>Direção criativa</h3>
+          <p>Traduzimos a estratégia em um conceito visual e de conteúdo
+            único — a identidade que vai sustentar todas as decisões
+            seguintes.</p>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-num">03 — Desenhar</div>
+          <h3>Interface e interação</h3>
+          <p>Prototipamos telas reais, testamos fluxos e refinamos cada
+            detalhe de tipografia, espaço e movimento até o produto parecer
+            inevitável.</p>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-num">04 — Entregar</div>
+          <h3>Do código ao ar</h3>
+          <p>Implementamos com performance e acessibilidade como
+            requisitos, não extras — e acompanhamos o resultado depois do
+            lançamento.</p>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-num">05 — Evoluir</div>
+          <h3>Melhoria contínua</h3>
+          <p>Medimos, ouvimos e ajustamos. Um bom produto digital nunca
+            está realmente "pronto" — está em constante refinamento.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     CONTINUAÇÃO DO PARALLAX APÓS A JORNADA
+     ============================================================ -->
+  <section class="parallax-bg-continuation" id="parallaxContinuation">
+  </section>
+
+  <!-- ============================================================
+     GALERIA EDITORIAL — BENTO GRID
+     ============================================================ -->
+  <section class="gallery" id="trabalhos">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">GALERIA</span>
+        <h2>Nossos momentos</h2>
+        <p>Uma amostra do nosso dia a dia.</p>
+      </div>
+
+      <div class="bento">
+        <div class="bento-item b-1">
+          <img src="img/primeiro-dia-de-aula.jpeg" alt="Interface de aplicativo em tons de roxo">
+          <div class="bento-caption"><span>O início</span><strong>fomos muito bem acolhidos. E a primeira aula foi com o professor Henrique</strong></div>
+        </div>
+        <div class="bento-item b-2">
+          <img src="img/primeira-visita-blusof.jpeg" alt="Identidade visual roxa">
+          <div class="bento-caption"><span>Visita da blusof</span><strong>Nesse dia a blusoft foi até o senai para nos acolher.</strong></div>
+        </div>
+        <div class="bento-item b-3">
+          <img src="img/ingles.jpeg" alt="Site editorial minimalista">
+          <div class="bento-caption"><span>Aula de inglês</span><strong>Aula criativa de inglês, tiramos varias fotinhas e criamos um slide com elas</strong></div>
+        </div>
+        <div class="bento-item b-4">
+          <img src="img/cib.jpeg" alt="Dashboard de dados">
+          <div class="bento-caption"><span>Visita a CIB</span><strong>Foi um dia muito divertido onde conhecemos mais sobre nossas futuras profissões</strong></div>
+        </div>
+        <div class="bento-item b-5">
+          <img src="img/Ale-uehara.jpeg" alt="Embalagem de produto roxo">
+          <div class="bento-caption"><span>Ale Uehara</span><strong>Tomamos coragem para pedir uma foto para o Ale. o engraçado foi que a brenda e eu começamos a nos falar a partir desse dia </strong></div>
+        </div>
+        <div class="bento-item b-6">
+          <img src="img/enchendo-a-barriga.jpg" alt="App mobile roxo">
+          <div class="bento-caption"><span>Croissant da amizade</span><strong>Recarregando as calorias</strong></div>
+        </div>
+        <div class="bento-item b-4">
+          <img src="img/cafezinho.jpg" alt="App mobile roxo">
+          <div class="bento-caption"><span>cafezinho</span><strong>Sara sempre traz cafezinho para recarregarmos as energias.</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-top">
+        <h3>Vamos transformar sua ideia em uma experiência memorável?</h3>
+        <div class="footer-links">
+          <a href="https://github.com" target="_blank" rel="noopener" class="hoverable">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="hoverable">LinkedIn</a>
+          <a href="mailto:ola@lumyn.studio" class="hoverable">E-mail</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 LUMYN Studio. Todos os direitos reservados.</span>
+        <span>Feito com propósito, em tons de roxo.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
