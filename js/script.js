@@ -1,4 +1,3 @@
-
 /* =========================================================================
    JAVASCRIPT
    Organizado em módulos independentes: cursor, tema, parallax, reveal de
@@ -6,6 +5,43 @@
    ========================================================================= */
 (function(){
   "use strict";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const splash = document.getElementById('splash-screen');
+    const header = document.querySelector('header');
+    const body = document.body;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!splash || reduceMotion) {
+      // If no splash screen or user prefers reduced motion, just show the site immediately.
+      if(splash) splash.classList.add('hidden');
+      if(header) header.classList.add('visible');
+      return;
+    }
+    
+    // Lock scroll initially
+    body.style.overflow = 'hidden';
+
+    const revealSite = () => {
+      splash.classList.add('hidden');
+      header.classList.add('visible');
+      body.style.overflow = ''; // Restore scroll
+
+      // Clean up the event listener
+      window.removeEventListener('wheel', handleFirstScroll);
+    };
+
+    const handleFirstScroll = (event) => {
+      // Check for a downward scroll action
+      if (event.deltaY > 0) {
+        revealSite();
+      }
+    };
+    
+    // Listen for the first mouse wheel event to trigger the transition
+    window.addEventListener('wheel', handleFirstScroll);
+  });
+
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
@@ -107,9 +143,9 @@
     if(rect.bottom < 0 || rect.top > window.innerHeight) return; 
 
     const scrolled = window.scrollY;
-    heroParallax.style.transform = `translate3d(0, ${scrolled * 0.7}px, 0)`; // Increased from 0.35 to 0.7
+    heroParallax.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`; // Increased from 0.35 to 0.7
     if(heroImage) {
-      heroImage.style.transform = `translate3d(0, ${scrolled * 0.4}px, 0)`; // Increased from 0.2 to 0.4
+      heroImage.style.transform = `translate3d(0, ${scrolled * 0.2}px, 0)`; // Increased from 0.2 to 0.4
     }
   }
 
