@@ -23,6 +23,7 @@
 
     // Lock scroll initially
     body.style.overflow = "hidden";
+    let siteRevealed = false; // Flag para garantir que a função rode apenas uma vez
 
     const revealSite = () => {
       splash.classList.add("hidden");
@@ -37,7 +38,8 @@
 
     const handleFirstScroll = (event) => {
       // Check for a downward scroll action
-      if (event.deltaY > 0) {
+      if (event.deltaY > 0 && !siteRevealed) {
+        siteRevealed = true;
         revealSite();
       }
     };
@@ -59,7 +61,10 @@
         const touchCurrentY = event.touches[0].clientY;
         // Verifica um swipe para cima de pelo menos 30 pixels
         if (touchStartY - touchCurrentY > 30) {
-          revealSite();
+          if (!siteRevealed) {
+            siteRevealed = true;
+            revealSite();
+          }
         }
       }
     };
