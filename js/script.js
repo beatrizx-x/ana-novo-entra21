@@ -31,6 +31,8 @@
 
       // Clean up the event listener
       window.removeEventListener("wheel", handleFirstScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
 
     const handleFirstScroll = (event) => {
@@ -42,6 +44,28 @@
 
     // Listen for the first mouse wheel event to trigger the transition
     window.addEventListener("wheel", handleFirstScroll);
+
+    // --- ADICIONADO: Lógica para swipe em dispositivos de toque ---
+    let touchStartY = 0;
+
+    const handleTouchStart = (event) => {
+      if (event.touches.length > 0) {
+        touchStartY = event.touches[0].clientY;
+      }
+    };
+
+    const handleTouchMove = (event) => {
+      if (event.touches.length > 0) {
+        const touchCurrentY = event.touches[0].clientY;
+        // Verifica um swipe para cima de pelo menos 30 pixels
+        if (touchStartY - touchCurrentY > 30) {
+          revealSite();
+        }
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
   });
 
   const reduceMotion = window.matchMedia(
