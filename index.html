@@ -39,11 +39,13 @@
     <div class="container">
       <a href="#top" class="logo hoverable">ANA<span>B</span>EATRIZ</a>
 
-      <nav class="main-nav">
-        <a href="#jornada" class="hoverable">Jornada</a>
-        <a href="#trabalhos" class="hoverable">Galeria</a>
-        <a href="#contato" class="hoverable">Contato</a>
-
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-links">
+          <a href="#jornada" class="hoverable">Jornada</a>
+          <a href="#trabalhos" class="hoverable">Galeria</a>
+          <a href="#contato" class="hoverable">Contato</a>
+        </div>
+        
         <!-- Botão "janela" de tema -->
         <button class="theme-toggle hoverable" id="themeToggle" aria-label="Alternar tema claro/escuro">
           <span class="tt-sun"></span>
@@ -53,6 +55,12 @@
           <span class="tt-star s1"></span>
           <span class="tt-star s2"></span>
           <span class="tt-star s3"></span>
+        </button>
+
+        <!-- Botão Hamburger -->
+        <button class="hamburger-menu hoverable" id="hamburgerMenu" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
         </button>
       </nav>
     </div>
@@ -78,7 +86,7 @@
           <span class="word"><span><em>Beatriz</em></span></span>
         </h1>
         <p class="hero-subtitle">
-         minha trajetoria no entra21
+          minha trajetoria no entra21
         </p>
       </div>
       <div class="hero-image-container">
@@ -102,7 +110,7 @@
 
       <div class="journey-track" id="journeyTrack">
 
-       <article class="journey-card">
+        <article class="journey-card">
           <div class="journey-num">01 — Sobre mim</div>
           <h3>Um pouco de tudo</h3>
           <p>Sou estudante de Análise e Desenvolvimento de Sistemas e, estudo programação e UX Design em casa. Gosto de ocupar a mente com hobbies variados e aprender coisas novas 🎹 📚 🪴.</p>
@@ -154,39 +162,39 @@
 
       <div class="bento">
         <div class="bento-item b-1">
-          <img src="img/primeiro-dia-de-aula.jpeg" alt="Interface de aplicativo em tons de roxo">
+          <img src="img/primeiro-dia-de-aula.jpeg" alt="Interface de aplicativo em tons de roxo" loading="lazy">
           <div class="bento-caption"><span>O início</span><strong>fomos muito bem acolhidos. E a primeira aula foi com o professor Henrique</strong></div>
         </div>
         <div class="bento-item b-2">
-          <img src="img/primeira-visita-blusof.jpeg" alt="Identidade visual roxa">
+          <img src="img/primeira-visita-blusof.jpeg" alt="Identidade visual roxa" loading="lazy">
           <div class="bento-caption"><span>Visita da blusof</span><strong>Nesse dia a blusoft foi até o senai para nos acolher.</strong></div>
         </div>
         <div class="bento-item b-3">
-          <img src="img/ingles.jpeg" alt="Site editorial minimalista">
+          <img src="img/ingles.jpeg" alt="Site editorial minimalista" loading="lazy">
           <div class="bento-caption"><span>Aula de inglês</span><strong>Aula criativa de inglês, tiramos varias fotinhas e criamos um slide com elas</strong></div>
         </div>
         <div class="bento-item b-4">
-          <img src="img/cib.jpeg" alt="Dashboard de dados">
+          <img src="img/cib.jpeg" alt="Dashboard de dados" loading="lazy">
           <div class="bento-caption"><span>Visita a CIB</span><strong>Foi um dia muito divertido onde conhecemos mais sobre nossas futuras profissões</strong></div>
         </div>
         <div class="bento-item b-5">
-          <img src="img/Ale-uehara.jpeg" alt="Embalagem de produto roxo">
+          <img src="img/Ale-uehara.jpeg" alt="Embalagem de produto roxo" loading="lazy">
           <div class="bento-caption"><span>Ale Uehara</span><strong>Tomamos coragem para pedir uma foto para o Ale. o engraçado foi que a brenda e eu começamos a nos falar a partir desse dia </strong></div>
         </div>
         <div class="bento-item b-6">
-          <img src="img/enchendo-a-barriga.jpg" alt="App mobile roxo">
+          <img src="img/enchendo-a-barriga.jpg" alt="App mobile roxo" loading="lazy">
           <div class="bento-caption"><span>Croissant da amizade</span><strong>Recarregando as calorias</strong></div>
         </div>
         <div class="bento-item b-4">
-          <img src="img/cafezinho.jpg" alt="App mobile roxo">
+          <img src="img/cafezinho.jpg" alt="App mobile roxo" loading="lazy">
           <div class="bento-caption"><span>cafezinho</span><strong>Sara sempre traz cafezinho para recarregarmos as energias.</strong></div>
         </div>
         <div class="bento-item b-1">
-          <img src="img/penultimodia-karize.jpeg" alt="Penúltimo dia">
+          <img src="img/penultimodia-karize.jpeg" alt="Penúltimo dia" loading="lazy">
           <div class="bento-caption"><span>Penúltimo dia</span><strong> Uma ótima professora, explica super bem e tem muita paciencia e carisma com a turma. com certeza deveriamos ter mais aulas com ela :(</strong></div>
         </div>
         <div class="bento-item b-4">
-          <img src="img/aula-karize.jpeg" alt="App mobile roxo">
+          <img src="img/aula-karize.jpeg" alt="App mobile roxo" loading="lazy">
           <div class="bento-caption"><span>Prof karize</span><strong></strong></div>
         </div>
       </div>
@@ -218,7 +226,13 @@
     <img class="lightbox-content" id="lightbox-img">
   </div>
 
-  <script src="js/script.js"></script>
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#top" id="backToTopBtn" class="back-to-top hoverable" title="Voltar ao topo">
+    <!-- Ícone de seta para cima -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M11.9999 10.8284L7.05023 15.7782L5.63602 14.364L11.9999 8L18.3638 14.364L16.9496 15.7782L11.9999 10.8284Z" transform="rotate(180 12 12)"></path></svg>
+  </a>
+
+  <script src="js/script.js" defer></script>
 </body>
 
 </html>
